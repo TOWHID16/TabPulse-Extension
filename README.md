@@ -2,29 +2,6 @@
 
 Smart, customizable auto‑suspension for Chrome tabs with grace‑period warnings, activity detection (media/network/realtime), and user‑friendly whitelists.
 
-## File Tree
-
-TabHealthMonitor/
-├── manifest.json
-├── README.md
-├── icons/
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-├── src/
-│   ├── background.js          # Service worker: core logic, scheduler, notifications
-│   ├── content.js             # Activity probe: user input, media, websockets, fetch/xhr, scroll save/restore
-│   ├── restore.js             # Runs at document_idle to restore scroll & simple form values
-│   ├── common.js              # Utilities shared via importScripts-like pattern (bundled via ES modules)
-│   ├── types.d.ts             # (Optional) Type hints if you use TS later
-│   └── styles.css             # Shared styles for popup/options
-├── popup/
-│   ├── popup.html
-│   └── popup.js
-└── options/
-    ├── options.html
-    └── options.js
-
 ## Features
 - **Grace‑period warnings** with actionable buttons (Keep Alive / Suspend Now)
 - **Smart activity detection**: user input, media playing, recent network requests, WebSocket usage
