@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TabPulse</title>
+    <link rel="stylesheet" href="../src/styles.css" />
+    <style>
+      body {
+        width: 320px;
+        font: 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        padding: 12px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 8px 0;
+      }
+      .small {
+        color: #666;
+      }
+      button {
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        background: #fafafa;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        padding: 6px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .score {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div>
+        <strong>TabPulse</strong>
+        <div class="small">Smart auto-suspend with warnings</div>
+      </div>
+      <button id="toggle"></button>
+    </div>
+
+    <div class="row">
+      <button id="openOptions">Settings</button>
+      <button id="keepAlive">Keep Alive (2h)</button>
+    </div>
+
+    <h4>Current Tab</h4>
+    <div id="current"></div>
+
+    <h4>At Risk (soon)</h4>
+    <ul id="atrisk"></ul>
+
+    <!-- Make popup.js an ES module -->
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-# Tab Health Monitor (MV3)
+# TabPulse (MV3)
 
 Smart, customizable auto‑suspension for Chrome tabs with grace‑period warnings, activity detection (media/network/realtime), and user‑friendly whitelists.
 

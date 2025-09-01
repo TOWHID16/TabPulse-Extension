@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TabPulse – Settings</title>
+    <link rel="stylesheet" href="../src/styles.css" />
+    <style>
+      body { max-width: 760px; margin: 24px auto; font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 16px; }
+      label { display: block; margin: 10px 0 4px; font-weight: 600; }
+      input[type="text"], input[type="number"] { width: 200px; padding: 6px; }
+      .row { display: flex; gap: 24px; align-items: center; }
+      .switch { display: inline-flex; align-items: center; gap: 8px; }
+      .muted { color: #666; }
+      button { padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; background: #fafafa; cursor: pointer; }
+      ul { padding-left: 18px; }
+    </style>
+  </head>
+  <body>
+    <h2>TabPulse – Settings</h2>
+    <div class="muted">Customize thresholds, whitelists, and behavior.</div>
+
+    <div class="row">
+      <div class="switch"><input id="enabled" type="checkbox"/> <label for="enabled">Enabled</label></div>
+    </div>
+
+    <label>Idle minutes before considering suspension</label>
+    <input id="idleMinutes" type="number" min="1" max="180" />
+
+    <label>Grace period (seconds) before suspension after warning</label>
+    <input id="gracePeriodSec" type="number" min="5" max="600" />
+
+    <label>Heuristic CPU limit (%) – approximate</label>
+    <input id="cpuLimitPercent" type="number" min="1" max="100" />
+
+    <label>Heuristic Memory limit (MB) – approximate</label>
+    <input id="memoryLimitMB" type="number" min="50" max="4096" />
+
+    <label>Keep‑Alive duration (minutes)</label>
+    <input id="keepAliveMinutes" type="number" min="5" max="1440" />
+
+    <h3>Safeguards</h3>
+    <div class="row"><input id="whitelistPinned" type="checkbox"/> <label for="whitelistPinned">Never suspend pinned tabs</label></div>
+    <div class="row"><input id="doNotSuspendAudible" type="checkbox"/> <label for="doNotSuspendAudible">Do not suspend audible tabs</label></div>
+    <div class="row"><input id="doNotSuspendMediaPlaying" type="checkbox"/> <label for="doNotSuspendMediaPlaying">Do not suspend tabs with playing media</label></div>
+    <div class="row"><input id="doNotSuspendNetworkActive" type="checkbox"/> <label for="doNotSuspendNetworkActive">Do not suspend tabs with recent network activity</label></div>
+    <div class="row"><input id="doNotSuspendRealtimeApps" type="checkbox"/> <label for="doNotSuspendRealtimeApps">Do not suspend tabs using WebSockets/real‑time</label></div>
+
+    <h3>Domain Whitelist</h3>
+    <div class="muted">One domain per line, e.g. <code>docs.google.com</code></div>
+    <textarea id="whitelistDomains" rows="6" cols="60"></textarea>
+
+    <div style="margin-top:16px">
+      <button id="save">Save</button>
+      <span id="status" class="muted" style="margin-left:10px"></span>
+    </div>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
